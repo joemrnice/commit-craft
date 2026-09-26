@@ -72,7 +72,7 @@ Run `git commit` with this message now? (y/N): y
 
 ## There's also a browser version
 
-Same logic, no install needed: [Commit Craft (web)](https://claude.ai/artifact/JjENiSiys8PaAAhHGXf8MT) — good for a quick one-off message without touching the terminal.
+Same logic, no install needed: [Commit Craft (web)]() — good for a quick one-off message without touching the terminal.
 
 ## License
 
