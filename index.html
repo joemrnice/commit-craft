@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111310">
+  <title>Commit Craft - Conventional Commit Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Commit Craft home">
+        <span class="brand-mark">CC</span>
+        <span>commit craft</span>
+      </a>
+      <div class="topbar-meta">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>conventional commits</span>
+        <span class="version">v1.0</span>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="intro">
+        <div class="eyebrow"><span class="eyebrow-line"></span>commit message builder</div>
+        <h1>Say what changed.<br><em>Commit it cleanly.</em></h1>
+        <p class="intro-copy">Turn a plain-English change into a polished Conventional Commit message in a few clicks.</p>
+        <div class="shortcut-note"><span class="keycap">⌘</span><span>Built for the small things that keep a codebase moving.</span></div>
+      </section>
+
+      <section class="builder" aria-label="Commit message builder">
+        <div class="form-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">01 / describe</span>
+              <h2>Shape your commit</h2>
+            </div>
+            <span class="live-label"><span class="pulse"></span>live</span>
+          </div>
+
+          <fieldset class="type-fieldset">
+            <legend>What kind of change is this?</legend>
+            <div class="type-grid" id="type-options"></div>
+          </fieldset>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Scope <small>optional</small></span>
+              <input id="scope" type="text" placeholder="auth / api / ui" autocomplete="off">
+            </label>
+            <div class="field-help">A focused area of the codebase</div>
+          </div>
+
+          <label class="field field-summary">
+            <span>What did you change? <small>required</small></span>
+            <input id="summary" type="text" placeholder="handle expired session tokens" autocomplete="off" maxlength="100">
+            <span class="char-count" id="summary-count">0 / 100</span>
+          </label>
+
+          <label class="field field-details">
+            <span>Why / details <small>optional</small></span>
+            <textarea id="details" rows="4" placeholder="Add context, one detail per line..."></textarea>
+            <span class="detail-hint">Each line becomes a bullet in the body</span>
+          </label>
+
+          <div class="form-footer">
+            <label class="toggle-row">
+              <input id="breaking" type="checkbox">
+              <span class="toggle" aria-hidden="true"></span>
+              <span><strong>Breaking change</strong><small>Requires a major version bump</small></span>
+            </label>
+            <button class="reset-button" id="reset" type="button">Reset <span>↺</span></button>
+          </div>
+        </div>
+
+        <aside class="preview-panel">
+          <div class="preview-topline">
+            <span class="panel-kicker">02 / preview</span>
+            <button class="copy-button" id="copy" type="button"><span class="copy-icon">□</span> Copy message</button>
+          </div>
+          <div class="preview-window">
+            <div class="window-bar"><span></span><span></span><span></span><code>commit-message.txt</code></div>
+            <pre id="message-preview" aria-live="polite"></pre>
+          </div>
+          <div class="preview-footer">
+            <span class="validity"><span class="check">✓</span> valid conventional commit</span>
+            <span class="message-lines" id="message-lines">1 line</span>
+          </div>
+          <div class="commit-tip"><span class="tip-mark">↳</span><span>Copy this message into your next <code>git commit</code>.</span></div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>⚡ made for developers who care about the little things</span><span>zero dependencies · works anywhere</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status">Message copied to clipboard</div>
+  <script src="app.js"></script>
+</body>
+</html>
