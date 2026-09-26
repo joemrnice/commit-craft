@@ -1,0 +1,17 @@
+{
+  "name": "commit-craft",
+  "version": "1.0.0",
+  "description": "Zero-dependency CLI that turns a plain-English change description into a clean Conventional Commit message.",
+  "main": "index.js",
+  "bin": {
+    "commit-craft": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["git", "commit", "conventional-commits", "cli"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  }
+}
